@@ -1,0 +1,23 @@
+library(Churnpack)
+library(testthat)
+library ("data.table")
+library ("lubridate")
+library(dplyr)
+
+customer <- fread (file = "/Users/Ksenia/Downloads/Churnpack/data_customer.csv")
+personal <- fread (file = "/Users/Ksenia/Downloads/Churnpack/data_personal.csv")
+
+data <- merge(customer, personal, by = "CustomerId", all = TRUE) #merge two tables
+data$Gender <- as.factor(data$Gender) #factor variables
+data$Exited <- as.factor(data$Exited)
+
+churn_prob <- glm(Exited ~ CreditScore + Gender + Age + Tenure + Balance +
+                    NumOfProducts + HasCrCard + IsActiveMember + EstimatedSalary,
+                  family = "binomial", data=data)
+data$ChurnProbability <- predict (churn_prob, data, type="response")
+
+
+test_that("Probability check", {
+  expect_gt(churn_fun(data, 15653251),
+            churn_fun(data, 15662641))
+})

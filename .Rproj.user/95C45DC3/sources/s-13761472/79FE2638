@@ -1,0 +1,26 @@
+{
+    "id": "79FE2638",
+    "path": "~/Downloads/Churnpack/tests/testthat/test-project.R",
+    "project_path": "tests/testthat/test-project.R",
+    "type": "r_source",
+    "hash": "3266991141",
+    "contents": "",
+    "dirty": false,
+    "created": 1644576042405.0,
+    "source_on_save": false,
+    "relative_order": 2,
+    "properties": {
+        "source_window_id": "",
+        "Source": "Source",
+        "cursorPosition": "22,2",
+        "scrollLine": "3"
+    },
+    "folds": "",
+    "lastKnownWriteTime": 1644576256,
+    "encoding": "UTF-8",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1644576256343,
+    "read_only": false,
+    "read_only_alternatives": []
+}
